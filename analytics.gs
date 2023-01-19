@@ -13,6 +13,12 @@ var rowNameSpace = XmlService.getNamespace(
 var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
 var spreadsheetId = SpreadsheetApp.getActiveSpreadsheet().getId();
 
+function onOpen() {
+  // add to UI menu
+  var ui = SpreadsheetApp.getUi();
+  ui.createMenu("Scripts").addItem("Load analytics", "main").addToUi();
+}
+
 function main() {
   var tableObj = {};
   // tableObj will contain data from all reports, in format:
